@@ -1,0 +1,14 @@
+body {
+    background-image: url("saul.gif");
+    background-position: center;
+    background-size: 100%;
+    background-attachment: fixed;
+
+    color: white;
+    border-color: white;
+}
+
+h1 {
+    text-align: center;
+    border-bottom-style: solid;
+}
