@@ -1,0 +1,14 @@
+body {
+    background-image: linear-gradient(to bottom right, rgb(69, 60, 103), rgb(109, 103, 228));
+    background-attachment: fixed;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(242, 247, 161);
+}   
+
+a {
+    color: rgb(70, 194, 203);
+}
