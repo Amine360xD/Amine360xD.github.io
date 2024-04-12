@@ -1,22 +1,84 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta property="og:type" content="website">
-        <meta property="og:site_name" content="NEW CP 2016">
-        <meta property="og:description" content="What are you waiting for? watch without ads">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        video {
+            position: fixed;
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+            top: 0;
+            left: 0;
+        }
 
-        <link type="application/json+oembed" href="embed.json">
+        h1 {
+            position: fixed;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: white;
+            width: 100%;
+            text-align: center;
+            font-size: 48px;
+            margin: 16px;
+            padding: 0px;
+        }
 
-        <script type="text/javascript" src="script.js"></script>
-        <link rel="stylesheet" href="styles.css">
-        <title>
-            NEW CP 2016
-        </title>
-    </head>
-    <body>
-        <h1>
-            NEW CP 2016
-        </h1>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">click here to watch</a>
-    </body>
+        #live {
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="weed.mp4" type="video/mp4">
+      </video>
+      <h1 id="countdown"></h1>
+      <h1 id="live">LIVE MIMIR REACTION</h1>
+      <script>
+        var canplay = true;
+
+        function play() {
+            if (canplay == true) {
+                canplay = false;
+                var audio = new Audio('ass.mp3');
+                audio.loop = true;
+                audio.play();
+            }
+        }
+
+        var end = new Date('06/09/2024 08:00 AM');
+        
+            var _second = 1000;
+            var _minute = _second * 60;
+            var _hour = _minute * 60;
+            var _day = _hour * 24;
+            var timer;
+        
+            function showRemaining() {
+                play();
+                var now = new Date();
+                var distance = end - now;
+                if (distance < 0) {
+        
+                    clearInterval(timer);
+                    document.getElementById('countdown').innerHTML = 'EXPIRED!';
+        
+                    return;
+                }
+                var days = Math.floor(distance / _day);
+                var hours = Math.floor((distance % _day) / _hour);
+                var minutes = Math.floor((distance % _hour) / _minute);
+                var seconds = Math.floor((distance % _minute) / _second);
+        
+                document.getElementById('countdown').innerHTML = 'TIME UNTIL BAC: ' + days + 'd ';
+                document.getElementById('countdown').innerHTML += hours + 'h ';
+                document.getElementById('countdown').innerHTML += minutes + 'm ';
+                document.getElementById('countdown').innerHTML += seconds + 's';
+            }
+        
+            timer = setInterval(showRemaining, 1000);
+        </script>
+</body>
 </html>
